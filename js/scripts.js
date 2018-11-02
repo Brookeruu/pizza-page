@@ -1,5 +1,6 @@
 function PizzaOrder() {
   this.pizzas = [];
+  pizza.pizzacost = [];
 }
 
 pizzaOrder.prototype.addPizzaToOrder = function(pizza) {
@@ -21,7 +22,7 @@ Pizza.prototype.pizzaToppingCost = function(toppingsCostArray) {
   return toppingTotal;
   }
 
-Pizza.prototype.pizzaSizeCost = function() {
+Pizza.prototype.pizzaSizeCost = function(size) {
   this.sizeCost += this.size;
   return this.sizeCost;
 }
@@ -57,15 +58,12 @@ $(document).ready(function(){
     toppingInputNameArray.push(toppingInputName);
   });
 
-  var size = parseInt($(".size").val());
+  var pizzaSize = parseInt($(".size").val());
 
-  var pizza = new Pizza(toppingsInput,sizeInput);
+  var pizza = new Pizza(toppingsInputNameArray,pizzaSize);
 
-  var perPizzaPrice = newPizza.totalPizzaCost();
-  var totalCost =  //Add up the price per pizza, maybe using pizza id?
+  var pizzaTotalCost = newPizza.totalPizzaCost();
 
-  var
-  orderTotal.addPizzaToOrder(pizza);
 
 
 });
