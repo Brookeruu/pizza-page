@@ -1,14 +1,18 @@
-function OrderTotal() {
+function totalOrderCost() {
+  this.orderCost = pizza.cost +=
+}
+
+function pizzaOrder() {
   this.pizzas = [];
 }
 
-OrderTotal.prototype.addPizzaToOrder = function() {
+pizzaOrder.prototype.addPizzaToOrder = function() {
   pizza.id = this.pizzaId();
-  pizza.cost = pizza.pizzacost();
+  pizza.pizzaCost = pizza.pizzacost();
   this.pizzas.push(pizza);
 }
 
-OrderTotal.prototype.pizzaId = function(){
+pizzaOrder.prototype.pizzaId = function(){
   this.pizzaId += 1;
   return this.pizzaId;
 }
@@ -19,10 +23,21 @@ function Pizza (cheese,toppings,size) {
   this.size = size;
 }
 
-Pizza.prototype.pizzaCost = function() {
-  this.cost = this.cheese + this.toppings + this.size;
-  return this.cost;
+Pizza.prototype.pizzaToppingCost = function() {
+  this.toppingCost += this.toppings
+  return this.toppingCost;
   }
+
+Pizza.prototype.pizzaSizeCost = function() {
+  this.sizeCost += this.size;
+  return this.sizeCost;
+}
+
+Pizza.prototype.totalPizzaCost = function() {
+  this.pizzaCost = this.toppingCost + this.sizeCost;
+  return this.pizzaCost;
+}
+
 
 
 $(document).ready(function(){
@@ -31,8 +46,9 @@ $(document).ready(function(){
   })
   var pizza = new Pizza();
   var perPizzaPrice = newPizza.pizzaCost();
-  var pizzaOrderTotal =
+  var totalCost =  //Add up the price per pizza, maybe using pizza id?
 
+  var
   orderTotal.addPizzaToOrder(pizza);
 
 
