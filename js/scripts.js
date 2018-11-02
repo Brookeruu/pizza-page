@@ -1,20 +1,10 @@
-function totalOrderCost() {
-  this.orderCost = pizza.cost +=
-}
-
-function pizzaOrder() {
+function PizzaOrder() {
   this.pizzas = [];
 }
 
-pizzaOrder.prototype.addPizzaToOrder = function() {
-  pizza.id = this.pizzaId();
-  pizza.pizzaCost = pizza.pizzacost();
+pizzaOrder.prototype.addPizzaToOrder = function(pizza) {
+  pizza.pizzaCost = pizza.totalPizzaCost();
   this.pizzas.push(pizza);
-}
-
-pizzaOrder.prototype.pizzaId = function(){
-  this.pizzaId += 1;
-  return this.pizzaId;
 }
 
 function Pizza (toppings,size) {
@@ -22,9 +12,13 @@ function Pizza (toppings,size) {
   this.size = size;
 }
 
-Pizza.prototype.pizzaToppingCost = function() {
-  this.toppingCost += this.toppings
-  return this.toppingCost;
+Pizza.prototype.pizzaToppingCost = function(toppingsCostArray) {
+  this.toppingCost = toppingTotal;
+  var toppingTotal = 0;
+  for (var i = 0; i < toppingsCostArray.length; i++) {
+    toppingTotal += toppingsCostArray[i];
+  }
+  return toppingTotal;
   }
 
 Pizza.prototype.pizzaSizeCost = function() {
@@ -43,8 +37,6 @@ $(document).ready(function(){
   $("EVENT LISTENER").submit(function(event){
       event.preventDefault();
 
-  var toppingsInput = names topping selected/checked
-
   // make an [array] to hold the values of each checked topping;
   // create a variable that gets the value of the check;
   // push each check into the array;
@@ -53,15 +45,19 @@ $(document).ready(function(){
   // create for loop index equals zero, condition is less than length of array of toppings, ++ each loop;
   // total will += toppings array []
 
-
-
   var toppingsInputCostArray = [];
-  $(function to parseInt checked values).each(function(){
-    var toppingsInputCost = parseInt value checked;
-    toppingsInputCostArray.push(toppingsInputCost);
+  $("input:checkbox[name=topping]:checked").each(funtion(){
+    var toppingInputCost = parseInt($(this).val());
+    toppingsInputCostArray.push(toppingInputCost);
   });
 
-  var size = parseInt checked box value size
+  var toppingsInputNameArray = [];
+  $("input:checkbox[name=topping]:checked").each(function(){
+    var toppingInputName = $(this).val());
+    toppingInputNameArray.push(toppingInputName);
+  });
+
+  var size = parseInt($(".size").val());
 
   var pizza = new Pizza(toppingsInput,sizeInput);
 
