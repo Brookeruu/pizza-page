@@ -13,20 +13,21 @@ h2 {
 body {
   background-image: url("../img/pizza-dark-background.jpeg");
   background-size: cover;
-  background-position: center;
+  background-position: left;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  height: 100%;
   font-weight: lighter;
   color: white;
   font-size: 18px;
 }
 
-.style {
-  color
-}
-
-input {
-  font-size: 20px;
-}
-
 select {
   font-weight: normal;
+}
+
+#miyoko {
+  font-size: 10;
+  font-style: normal;
+  font-weight: lighter;
 }
