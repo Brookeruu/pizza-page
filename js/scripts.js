@@ -4,7 +4,7 @@
 
 function PizzaOrder() {
   this.pizzas = [];
-  pizza.pizzacost = [];
+  pizza.pizzaCost = [];
 }
 
 PizzaOrder.prototype.addPizzaToOrder = function(pizza) {
@@ -17,24 +17,23 @@ function Pizza (toppings,size) {
   this.size = size;
 }
 
-Pizza.prototype.pizzaToppingCost = function(toppingsCostArray) {
+Pizza.prototype.totalPizzaCost = function(toppingsCostArray) {
   this.toppingCost = toppingTotal;
   var toppingTotal = 0;
   for (var i = 0; i < toppingsCostArray.length; i++) {
     toppingTotal += toppingsCostArray[i];
   }
-  return toppingTotal;
+  return toppingTotal + this.size;
   }
 
-Pizza.prototype.pizzaSizeCost = function(size) {
-  this.sizeCost += this.size;
-  return this.sizeCost;
-}
-
-Pizza.prototype.totalPizzaCost = function() {
-  this.pizzaCost = this.toppingCost + this.sizeCost;
-  return this.pizzaCost;
-}
+// Pizza.prototype.pizzaSizeCost = function(size) {
+//   this.sizeCost = this.size;
+// }
+//
+// Pizza.prototype.totalPizzaCost = function() {
+//   this.pizzaCost = this.toppingCost + this.size;
+//   return this.pizzaCost;
+// }
 
 // ---------------------------------------------------------------------------
 // //Business Logic for Pizza Order
@@ -42,34 +41,32 @@ Pizza.prototype.totalPizzaCost = function() {
 
 
 $(document).ready(function(){
-  $("EVENT LISTENER").submit(function(event){
+  $("#orderForm").submit(function(event){
       event.preventDefault();
-
-  // make an [array] to hold the values of each checked topping;
-  // create a variable that gets the value of the check;
-  // push each check into the array;
-  //
-  // create a variable equal to zero;
-  // create for loop index equals zero, condition is less than length of array of toppings, ++ each loop;
-  // total will += toppings array []
 
   var toppingsInputCostArray = [];
   $("input:checkbox[name=topping]:checked").each(function(){
     var toppingInputCost = parseInt($(this).val());
     toppingsInputCostArray.push(toppingInputCost);
   });
+  console.log(toppingsInputCostArray);
 
   var toppingsInputNameArray = [];
   $("input:checkbox[name=topping]:checked").each(function(){
     var toppingInputName = $(this).val();
-    toppingInputNameArray.push(toppingInputName);
+    toppingsInputNameArray.push(toppingInputName);
   });
+  // console.log(toppingsInputNameArray);
 
-  var pizzaSize = parseInt($(".size").val());
 
-  var pizza = new Pizza(toppingsInputNameArray,pizzaSize);
+  var pizzaSize = parseInt($("#pizzaSize").val());
+  console.log(pizzaSize);
 
-  var pizzaTotalCost = newPizza.totalPizzaCost();
+  var newPizza = new Pizza(toppingsInputCostArray,pizzaSize);
+  console.log(newPizza);
+
+  var pizzaTotalCost = newPizza.totalPizzaCost(toppingsInputCostArray);
+  console.log(pizzaTotalCost);
 
 
 

@@ -1,0 +1,37 @@
+Pizza Prject
+
+ * Create a website for a pizza Place
+ * Allow user to choose 1 or more toppings
+ * Choose a size
+ * Display a final cost
+-----
+* Create a pizza object constructor with properties for toppings and size
+* Create prototype method for cost depending on selection
+-----
+
+If all objectives met :
+* Style with CSS
+* Add images
+* Display list of pizzas ordered as links that can be clicked on for details
+* Delivery option that requires address
+
+
+PLAN
+
+Make a pizza order form
+that has different pizza topping options
+that can be clicked to add to pizzas
+also make the pizza two different sizes (small and large)
+Both the toppings and sizes need to have a price
+
+Once pizza toppings and size selections are made, display a sum constructor
+
+------
+Create a pizza constructor
+  w/ properties like toppings and sizes
+
+a pizza method to add up the cost of the pizzas
+
+Maybe a pizza constructor to hold the order of pizzas
+
+Give pizza toppings and sizes a value in html form checkboxes
