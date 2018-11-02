@@ -4,11 +4,11 @@
 
 function PizzaOrder() {
   this.pizzas = [];
-  pizza.pizzaCost = [];
+  this.pizzaCost = [];
 }
 
 PizzaOrder.prototype.addPizzaToOrder = function(pizza) {
-  pizza.pizzaCost = pizza.totalPizzaCost();
+  this.pizzaCost = pizza.toppingCost(pizza);
   this.pizzas.push(pizza);
 }
 
@@ -49,7 +49,6 @@ $(document).ready(function(){
     var toppingInputCost = parseInt($(this).val());
     toppingsInputCostArray.push(toppingInputCost);
   });
-  console.log(toppingsInputCostArray);
 
   var toppingsInputNameArray = [];
   $("input:checkbox[name=topping]:checked").each(function(){
@@ -58,17 +57,17 @@ $(document).ready(function(){
   });
   // console.log(toppingsInputNameArray);
 
-
   var pizzaSize = parseInt($("#pizzaSize").val());
-  console.log(pizzaSize);
 
   var newPizza = new Pizza(toppingsInputCostArray,pizzaSize);
-  console.log(newPizza);
 
   var pizzaTotalCost = newPizza.totalPizzaCost(toppingsInputCostArray);
   console.log(pizzaTotalCost);
 
+  // var pizzaOrder = newPizza.PizzaOrder(newPizza);
+  // console.log(pizzaOrder);
 
+  $("#insertCost").text(pizzaTotalCost);
 
 });
 
