@@ -26,15 +26,6 @@ Pizza.prototype.totalPizzaCost = function(toppingsCostArray) {
   return toppingTotal + this.size;
   }
 
-// Pizza.prototype.pizzaSizeCost = function(size) {
-//   this.sizeCost = this.size;
-// }
-//
-// Pizza.prototype.totalPizzaCost = function() {
-//   this.pizzaCost = this.toppingCost + this.size;
-//   return this.pizzaCost;
-// }
-
 // ---------------------------------------------------------------------------
 // //Business Logic for Pizza Order
 // ---------------------------------------------------------------------------
@@ -55,19 +46,16 @@ $(document).ready(function(){
     var toppingInputName = $(this).val();
     toppingsInputNameArray.push(toppingInputName);
   });
-  // console.log(toppingsInputNameArray);
 
   var pizzaSize = parseInt($("#pizzaSize").val());
 
   var newPizza = new Pizza(toppingsInputCostArray,pizzaSize);
-
+  console.log(newPizza);
   var pizzaTotalCost = newPizza.totalPizzaCost(toppingsInputCostArray);
   console.log(pizzaTotalCost);
 
-  // var pizzaOrder = newPizza.PizzaOrder(newPizza);
-  // console.log(pizzaOrder);
-
   $("#insertCost").text(pizzaTotalCost);
+  $(".orderResults").show();
 
 });
 
