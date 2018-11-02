@@ -1,9 +1,13 @@
+// ---------------------------------------------------------------------------
+// //Business Logic for Pizza Order
+// ---------------------------------------------------------------------------
+
 function PizzaOrder() {
   this.pizzas = [];
   pizza.pizzacost = [];
 }
 
-pizzaOrder.prototype.addPizzaToOrder = function(pizza) {
+PizzaOrder.prototype.addPizzaToOrder = function(pizza) {
   pizza.pizzaCost = pizza.totalPizzaCost();
   this.pizzas.push(pizza);
 }
@@ -32,6 +36,9 @@ Pizza.prototype.totalPizzaCost = function() {
   return this.pizzaCost;
 }
 
+// ---------------------------------------------------------------------------
+// //Business Logic for Pizza Order
+// ---------------------------------------------------------------------------
 
 
 $(document).ready(function(){
@@ -47,14 +54,14 @@ $(document).ready(function(){
   // total will += toppings array []
 
   var toppingsInputCostArray = [];
-  $("input:checkbox[name=topping]:checked").each(funtion(){
+  $("input:checkbox[name=topping]:checked").each(function(){
     var toppingInputCost = parseInt($(this).val());
     toppingsInputCostArray.push(toppingInputCost);
   });
 
   var toppingsInputNameArray = [];
   $("input:checkbox[name=topping]:checked").each(function(){
-    var toppingInputName = $(this).val());
+    var toppingInputName = $(this).val();
     toppingInputNameArray.push(toppingInputName);
   });
 
