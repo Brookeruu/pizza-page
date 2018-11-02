@@ -19,7 +19,7 @@ _A user can select the ingredients and size of pizza they'd like to order. The p
 
 Link to github: https://github.com/Brookeruu/pizza-page.git
 
-Link to working site:
+Link to working site: https://brookeruu.github.io/pizza-page/
 
 ##### Setup/Installation Requirements
 * Clone this repository
