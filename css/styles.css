@@ -1,3 +1,7 @@
+h2 {
+  color: white;
+}
+
 .orderResults {
   display: none;
 }
@@ -7,5 +11,22 @@
 }
 
 body {
-  background-image: image();
+  background-image: url("../img/pizza-dark-background.jpeg");
+  background-size: cover;
+  background-position: center;
+  font-weight: lighter;
+  color: white;
+  font-size: 18px;
+}
+
+.style {
+  color
+}
+
+input {
+  font-size: 20px;
+}
+
+select {
+  font-weight: normal;
 }

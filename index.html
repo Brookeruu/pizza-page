@@ -10,46 +10,49 @@
 </head>
 <body>
   <div class="container">
-    <h2 class="jumbotron">Nom Nom Pizza</h2>
-    <h4>Nom Nom Pizza Online Order Form:</h4>
+    <div class="style">
 
-    <form id="orderForm" action="index.html" method="post">
+      <h1 class="">Nom Nom Pizza</h1>
+      <h3>Nom Nom Pizza Online Order Form:</h3>
 
-      <div class="form-group">
-        <div class="row">
-          <div class="col-md-4 col-sm-6">
-            <h5>Which toppings would you like on your pizza?</h5>
-            <h6>Toppings are $1 per topping</h6>
-            <input type="checkbox" name="topping" value="1">Tomatoes</br>
-            <input type="checkbox" name="topping" value="1">Roasted Garlic</br>
-            <input type="checkbox" name="topping" value="1">Bell Peppers</br>
-            <input type="checkbox" name="topping" value="1">Red Onion</br>
-            <input type="checkbox" name="topping" value="1">Caramelized Onion</br>
-            <input type="checkbox" name="topping" value="1">Sauteed Spinach</br>
-            <input type="checkbox" name="topping" value="1">Fresh Basil</br>
-            <input type="checkbox" name="topping" value="1">Olives</br>
-            <input type="checkbox" name="topping" value="1">Soy curls</br>
-            <input type="checkbox" name="topping" value="1">Tempeh Sausage</br>
-            <input type="checkbox" name="topping" value="1">Seitan Pepperoni</br>
+      <form id="orderForm" action="index.html" method="post">
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <h4>Which toppings would you like on your pizza?</h4>
+              <h5>Toppings are $1 per topping</h5>
+              <input type="checkbox" name="topping" value="1">Tomatoes</br>
+              <input type="checkbox" name="topping" value="1">Roasted Garlic</br>
+              <input type="checkbox" name="topping" value="1">Bell Peppers</br>
+              <input type="checkbox" name="topping" value="1">Red Onion</br>
+              <input type="checkbox" name="topping" value="1">Caramelized Onion</br>
+              <input type="checkbox" name="topping" value="1">Sauteed Spinach</br>
+              <input type="checkbox" name="topping" value="1">Fresh Basil</br>
+              <input type="checkbox" name="topping" value="1">Olives</br>
+              <input type="checkbox" name="topping" value="1">Soy curls</br>
+              <input type="checkbox" name="topping" value="1">Tempeh Sausage</br>
+              <input type="checkbox" name="topping" value="1">Seitan Pepperoni</br>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <h4>Which size pizza?</h4>
+              <h5>12" Pizza is $12 & 18" inch pizza is $18</h5>
+              <select class="form-control" id="pizzaSize">
+                <option name="size" value=12>Regular 12"</option>
+                <option name"size" value=18>Large 18"</option>
+              </select>
+              <button type="submit" name="button" class="btn btn-danger">Submit Order</button>
+            </div>
           </div>
-          <div class="col-md-4 col-sm-6">
-            <h5>Which size pizza?</h5>
-            <h6>12" is $12 & 18" is $18</h6>
-            <select class="form-control" id="pizzaSize">
-              <option name="size" value=12>Regular 12"</option>
-              <option name"size" value=18>Large 18"</option>
-            </select>
-            <button type="submit" name="button" class="btn btn-info">Submit Order</button>
-          </div>
-        </div>
           <div class="row">
             <div class="orderResults">
-              <h4>Your Nom Nom peetz total is: $<span id="insertCost"></span></h4>
+              <h2>Your peetz total is: $<span id="insertCost"></span></h2>
 
+            </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
 
     <!-- // close container -->
   </div>

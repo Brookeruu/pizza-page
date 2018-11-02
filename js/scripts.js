@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// //Business Logic for Pizza Order
+// //Business Logic
 // ---------------------------------------------------------------------------
 
 function PizzaOrder() {
@@ -24,38 +24,38 @@ Pizza.prototype.totalPizzaCost = function(toppingsCostArray) {
     toppingTotal += toppingsCostArray[i];
   }
   return toppingTotal + this.size;
-  }
+}
 
 // ---------------------------------------------------------------------------
-// //Business Logic for Pizza Order
+// //User Intergace Logic
 // ---------------------------------------------------------------------------
 
 
 $(document).ready(function(){
-  $("#orderForm").submit(function(event){
-      event.preventDefault();
+$("#orderForm").submit(function(event){
+    event.preventDefault();
 
-  var toppingsInputCostArray = [];
-  $("input:checkbox[name=topping]:checked").each(function(){
-    var toppingInputCost = parseInt($(this).val());
-    toppingsInputCostArray.push(toppingInputCost);
-  });
+var toppingsInputCostArray = [];
+$("input:checkbox[name=topping]:checked").each(function(){
+  var toppingInputCost = parseInt($(this).val());
+  toppingsInputCostArray.push(toppingInputCost);
+});
 
-  var toppingsInputNameArray = [];
-  $("input:checkbox[name=topping]:checked").each(function(){
-    var toppingInputName = $(this).val();
-    toppingsInputNameArray.push(toppingInputName);
-  });
+var toppingsInputNameArray = [];
+$("input:checkbox[name=topping]:checked").each(function(){
+  var toppingInputName = $(this).val();
+  toppingsInputNameArray.push(toppingInputName);
+});
 
-  var pizzaSize = parseInt($("#pizzaSize").val());
+var pizzaSize = parseInt($("#pizzaSize").val());
 
-  var newPizza = new Pizza(toppingsInputCostArray,pizzaSize);
-  console.log(newPizza);
-  var pizzaTotalCost = newPizza.totalPizzaCost(toppingsInputCostArray);
-  console.log(pizzaTotalCost);
+var newPizza = new Pizza(toppingsInputCostArray,pizzaSize);
+console.log(newPizza);
+var pizzaTotalCost = newPizza.totalPizzaCost(toppingsInputCostArray);
+console.log(pizzaTotalCost);
 
-  $("#insertCost").text(pizzaTotalCost);
-  $(".orderResults").show();
+$("#insertCost").text(pizzaTotalCost);
+$(".orderResults").show();
 
 });
 
