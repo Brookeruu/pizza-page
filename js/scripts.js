@@ -1,9 +1,16 @@
 function OrderTotal() {
-this.pizzas = [];
+  this.pizzas = [];
 }
 
 OrderTotal.prototype.addPizzaToOrder = function() {
-this.pizzas.push(pizza);
+  pizza.id = this.pizzaId();
+  pizza.cost = pizza.pizzacost();
+  this.pizzas.push(pizza);
+}
+
+OrderTotal.prototype.pizzaId = function(){
+  this.pizzaId += 1;
+  return this.pizzaId;
 }
 
 function Pizza (cheese,toppings,size) {
@@ -12,12 +19,22 @@ function Pizza (cheese,toppings,size) {
   this.size = size;
 }
 
-Pizza.prototype.
-
 Pizza.prototype.pizzaCost = function() {
+  this.cost = this.cheese + this.toppings + this.size;
+  return this.cost;
+  }
 
-}
+
+$(document).ready(function(){
+  $("EVENT LISTENER").submit(function(event){
+      event.preventDefault();
+  })
+  var pizza = new Pizza();
+  var perPizzaPrice = newPizza.pizzaCost();
+  var pizzaOrderTotal =
+
+  orderTotal.addPizzaToOrder(pizza);
 
 
-var pizza = new Pizza();
-orderTotal.addPizzaToOrder(pizza);
+
+});
